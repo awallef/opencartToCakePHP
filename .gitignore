@@ -1,0 +1,31 @@
+### Mac OS X
+*.DS_Store
+
+### NetBeans
+nbproject/private/*
+
+### cakePHP
+[Cc]onfig/core.php
+[Cc]onfig/database.php
+app/tmp/*
+app/[Cc]onfig/core.php
+app/[Cc]onfig/database.php
+!empty
+
+### opencart
+*download
+*image/cache/*.jpg
+*image/cache/data/*
+*system/cache
+*system/logs
+
+### composer
+*.lock
+vendors/*
+vendor/*
+
+### compass
+*.sass-cache*
+
+### npm bower grunt
+*node_modules*

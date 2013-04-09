@@ -1,0 +1,2 @@
+<meta property="og:description" content="Lxir Expérience minceur: Conçue pour traiter l’humain dans sa globalité, notre méthode agit non seulement sur votre alimentation, mais aussi sur les mécanismes qui vous empêchent d’avancer">
+<meta property="og:image" content="http://www.lxir.ch/img/lxir_logo.png">
