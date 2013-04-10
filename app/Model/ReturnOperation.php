@@ -10,7 +10,7 @@ App::uses('AppModel', 'Model');
  * @property ReturnAction $ReturnAction
  * @property ReturnStatus $ReturnStatus
  */
-class Return extends AppModel {
+class ReturnOperation extends AppModel {
 
 /**
  * Use table

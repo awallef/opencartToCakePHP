@@ -1,64 +1,62 @@
-<!DOCTYPE html >
+<?php
+/**
+ *
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.View.Layouts
+ * @since         CakePHP(tm) v 0.10.0.1076
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
+
+$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+?>
+<!DOCTYPE html>
 <html>
+<head>
+	<?php echo $this->Html->charset(); ?>
+	<title>
+		<?php echo $cakeDescription ?>:
+		<?php echo $title_for_layout; ?>
+	</title>
+	<?php
+		echo $this->Html->meta('icon');
 
-    <head>
-        <?php echo $this->Html->charset(); ?>
-        <title>palo-ma.com : <?php echo $title_for_layout; ?></title>
+		echo $this->Html->css('cake.generic');
 
-        <?php
-        // METAS
-        echo $this->element('meta/head/mobile');
-        echo $this->element('meta/head/og');
-        echo $this->element('meta/head/seo');
+		echo $this->fetch('meta');
+		echo $this->fetch('css');
+		echo $this->fetch('script');
+	?>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+		</div>
+		<div id="content">
 
-        echo $this->Html->meta('icon');
+			<?php echo $this->Session->flash(); ?>
 
-        echo $this->Html->css('screen');
-        echo $this->Html->script('jquery-1.8.3.min');
-        echo $this->Html->script('bootstrap.min');
-
-        echo $scripts_for_layout;
-
-        echo $this->element('ie/head');
-        ?>
-
-    </head>
-
-    <body  itemscope itemtype="http://schema.org/WebPage" >
-
-        <div id="container">
-            <header id="header" >
-                <?php echo $this->element('widgets/header'); ?>
-            </header>
-            
-            <section id="content" >
-                <?php echo $this->Session->flash(); ?>
-                <?php echo $this->fetch('content'); ?>
-            </section>
-            
-             <!-- ************* SQL ****************** -->
-            <div id="sql-dump">
-                <?php echo $this->element('sql_dump'); ?>
-            </div>
-
-            <!-- ************* MICRODATA ****************** -->
-            <?php
-            // WebPage Author
-            echo $this->element('meta/microdata/3xw', array(
-                'itemprop' => 'author'
-            ));
-
-            // WebPage Copyright Holder
-            echo $this->element('meta/microdata/paloma', array(
-                'itemprop' => 'copyrightHolder'
-            ));
-            ?>
-            
-        </div>
-       
-         <footer id="footer">
-           <?php echo $this->element('widgets/footer'); ?>
-        </footer>
-        
-    </body>
+			<?php echo $this->fetch('content'); ?>
+		</div>
+		<div id="footer">
+			<?php echo $this->Html->link(
+					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
+					'http://www.cakephp.org/',
+					array('target' => '_blank', 'escape' => false)
+				);
+			?>
+		</div>
+	</div>
+	<?php echo $this->element('sql_dump'); ?>
+</body>
 </html>

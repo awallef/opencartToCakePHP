@@ -284,7 +284,7 @@ class Customer extends AppModel {
 			'counterQuery' => ''
 		),
 		'Return' => array(
-			'className' => 'Return',
+			'className' => 'ReturnOperation',
 			'foreignKey' => 'customer_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -308,30 +308,6 @@ class Customer extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
-	);
-
-
-/**
- * hasAndBelongsToMany associations
- *
- * @var array
- */
-	public $hasAndBelongsToMany = array(
-		'Transaction' => array(
-			'className' => 'Transaction',
-			'joinTable' => 'customer_transaction',
-			'foreignKey' => 'customer_id',
-			'associationForeignKey' => 'transaction_id',
-			'unique' => 'keepExisting',
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
 		)
 	);
 
